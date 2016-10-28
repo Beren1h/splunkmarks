@@ -14,7 +14,7 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage request, Tr
     {
         new QueryDefinition
         {
-            Format = "\"*processor*\" \"message complete; message id=*; correlation id=*\" earliest={1} latest={2}",
+            Format = "index={0} &quot;*processor*&quot; &quot;message complete; message id=*; correlation id=*&quot; earliest={1} latest={2}",
             Display = "queue message processed"
         }
     };
