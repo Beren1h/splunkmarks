@@ -10,13 +10,13 @@ public class QueryDefinition
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage request, TraceWriter log)
 {
-    private var q0 = new QueryDefinition
+    var q0 = new QueryDefinition
     {
         Id = "q0",
         Format = "\"*processor*\" \"message complete; message id = *; correlation id = *\" earliest={1} latest={2}"
     };
 
-    private var list = new List<QueryDefinition>
+    var list = new List<QueryDefinition>
     {
         q0
     };
