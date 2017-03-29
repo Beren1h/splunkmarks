@@ -41,6 +41,11 @@ public static async Task<HttpResponseMessage> Run(HttpRequestMessage request, Tr
         {
             Format = "index=&quot;{0}&quot; source=&quot;*processor*&quot; &quot;message complete; message id=*; correlation id=*&quot; delivery count > 1 earliest={1} latest={2}",
             Display = "queue message processed >1 delivery attempt"
+        },
+        new QueryDefinition
+        {
+            Format = "index=&quot;{0}&quot; source=&quot;*internal*&quot; &quot;api/ecs/decision/ready; lead sent; application id=*&quot; earliest={1} latest={2} stats count by store",
+            Display = "Kyle's Report"
         }
     };
 
